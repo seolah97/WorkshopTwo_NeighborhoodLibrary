@@ -11,54 +11,48 @@ public class Main {
     }
 
     class Book{
-        //Id- Property/Construct./Get n Set
-        private int Id;
+        //Constructor
+        public Book (int id, String isbn, String title, boolean isCheckedOut, String checkedOutTo){
+            this.id = id;
+            this.isbn = isbn;
+            this.title = title;
+            this.isCheckedOut = isCheckedOut;
+            this.checkedOutTo = checkedOutTo;
+
+        }
+        //id- Properties /Get n Set
+        private int id;
         public int getId() {
-            return Id;}
-
+            return id;}
         public void setId(int id) {
-            Id = id;}
+            id = id;}
 
-        public Book() {}
-        public Book(int id) {
-            Id = id;}
 
-        //Isbn- Property/Construct./Get n Set
-        private String Isbn;
-        public Book(String isbn) {
-            Isbn = isbn;}
+        //isbn- Property/Construct./Get n Set
+        private String isbn;
         public String getIsbn() {
-            return Isbn;}
-
+            return this.isbn;}
         public void setIsbn(String isbn) {
-            Isbn = isbn;}
+            this.isbn = isbn;}
 
         //Title- Property/Construct./Get n Set
-        private String Title;
+        private String title;
         public String getTitle() {
-            return Title;}
-
+            return title;}
         public void setTitle(String title) {
-            Title = title;}
+            title = title;}
 
         //isCheckedOut- Property/Construct./Get n Set
-        public Book(boolean isCheckedOut) {
-
-            this.isCheckedOut = isCheckedOut;}
-
-        public boolean isCheckedOut() {
+        private boolean isCheckedOut;
+        public boolean getIsCheckedOut() {
             return isCheckedOut;}
-
         public void setCheckedOut(boolean checkedOut) {
             isCheckedOut = checkedOut;}
 
-        private boolean isCheckedOut;
-
-        //checkedOutTo- Property/Construct./Get n Set
+        //checkedOutTo- Properties/Get n Set
         private String checkedOutTo;
         public String getCheckedOutTo() {
             return checkedOutTo;}
-
         public void setCheckedOutTo(String checkedOutTo) {
             this.checkedOutTo = checkedOutTo;}
 
