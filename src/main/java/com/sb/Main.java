@@ -1,48 +1,56 @@
 package com.sb;
-
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-        // Make Book Class with Properties: Id-int, Isbn-String, Title- String, isCheckedOut-boolean, checkedOutTo-String
-        //Methods:  checkOut(name) ,  checkIn()
-        // Use Array to hold at least 5 books
+        Book[] books = new Book[5];
 
+        books[1] = new Book(5864, "7851-3545", "Count of Monte Cristo", false, "Nobody");
+        books[2] = new Book(6284, "8495-5435", "Atomic Habits", false, "Nobody");
+        books[3] = new Book(8219, "4982-6489", "The Little Prince", false, "Nobody");
+        books[4] = new Book(3685, "8492-6429", "Harry Potter", false, "Nobody");
+        books[5] = new Book(2984, "6782-3462", "The Witches", true, "Ashley");
+
+        for(int i=0; i < books.length; i++);
 
     }
+}
 
-    class Book{
+
+class Book{
         //Constructor
-        public Book (int id, String isbn, String title, boolean isCheckedOut, String checkedOutTo){
+    public Book (int id, String isbn, String title, boolean isCheckedOut, String checkedOutTo){
             this.id = id;
             this.isbn = isbn;
             this.title = title;
-            this.isCheckedOut = isCheckedOut;
+            this.isCheckedOut = false;
             this.checkedOutTo = checkedOutTo;
 
         }
         //id- Properties /Get n Set
-        private int id;
+        public int id;
         public int getId() {
             return id;}
         public void setId(int id) {
             id = id;}
 
 
-        //isbn- Property/Construct./Get n Set
+        //isbn- Properties/Get n Set
         private String isbn;
         public String getIsbn() {
             return this.isbn;}
         public void setIsbn(String isbn) {
             this.isbn = isbn;}
 
-        //Title- Property/Construct./Get n Set
+        //Title- Properties/Get n Set
         private String title;
         public String getTitle() {
             return title;}
         public void setTitle(String title) {
             title = title;}
 
-        //isCheckedOut- Property/Construct./Get n Set
+        //isCheckedOut- Properties/Get n Set
         private boolean isCheckedOut;
         public boolean getIsCheckedOut() {
             return isCheckedOut;}
@@ -59,5 +67,5 @@ public class Main {
 
 
 
-    }
+
 }
