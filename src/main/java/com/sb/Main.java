@@ -1,21 +1,44 @@
 package com.sb;
 import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) throws InterruptedException {
+        Scanner userScanner = new Scanner(System.in);
 
-        Book[] books = new Book[5];
+        Book[] bookArray = new Book[6];
 
-        books[1] = new Book(5864, "7851-3545", "Count of Monte Cristo", false, "Nobody");
-        books[2] = new Book(6284, "8495-5435", "Atomic Habits", false, "Nobody");
-        books[3] = new Book(8219, "4982-6489", "The Little Prince", false, "Nobody");
-        books[4] = new Book(3685, "8492-6429", "Harry Potter", false, "Nobody");
-        books[5] = new Book(2984, "6782-3462", "The Witches", true, "Ashley");
+        bookArray[1] = new Book(5864, "7851-3545", "Count of Monte Cristo", false, null);
+        bookArray[2] = new Book(6284, "8495-5435", "Atomic Habits", false, null);
+        bookArray[3] = new Book(8219, "4982-6489", "The Little Prince", false, null);
+        bookArray[4] = new Book(3685, "8492-6429", "Harry Potter", false, null);
+        bookArray[5] = new Book(2984, "6782-3462", "The Witches", false, null);
 
-        for(int i=0; i < books.length; i++);
+//        int totalNumOfBooks = bookArray.length;
 
+        int commandInput;
+        String userInput;
+
+        do {
+            System.out.println(
+                    "Library Home Screen\n" +
+                    "\t1 Display Available Books\n" +
+                    "\t2 Display Checked Out Books\n" +
+                    "\t3 Exit "
+            );
+            commandInput = userScanner.nextInt();
+
+
+
+
+        } while (commandInput !=3);
     }
 }
+
+
+
+
+            //Display Available books
+
+
 
 
 class Book{
