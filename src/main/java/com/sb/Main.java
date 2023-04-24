@@ -1,7 +1,7 @@
 package com.sb;
 import java.util.Scanner;
 public class Main {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args){
         Scanner userScanner = new Scanner(System.in);
 
         Book[] bookArray = new Book[6];
@@ -16,28 +16,50 @@ public class Main {
 
         int commandInput;
         String userInput;
-
+        // Displays the 3 options for Library user
         do {
             System.out.println(
                     "Library Home Screen\n" +
                     "\t1 Display Available Books\n" +
                     "\t2 Display Checked Out Books\n" +
-                    "\t3 Exit "
+                    "\tC Check In a Book\n" +
+                    "\t3 Exit\n" + "Choose what you would like to do: "
             );
             commandInput = userScanner.nextInt();
 
+        // Show Available Books: Needs to show books, Prompt book to check out-> name, or exit
+            switch(commandInput){
+            case 1: //shows List of books for user
+                System.out.println("List of Available Books");
+                for(int i = 0; i < bookArray.length; i++) {
+                    if (bookArray[i] == null) {
+                        break; //Will not list available list without a break
+                    }
+
+                if (!bookArray[i].getIsCheckedOut()) {
+                    System.out.printf("\tId: %d, Isbn: %s, Title: %s\n",
+                            bookArray[i].getId(),
+                            bookArray[i].getIsbn(),
+                            bookArray[i].getTitle()
+                    );
+                }
+            System.out.println("Please enter the ID of the book to check out: ");
+            int Id = userScanner.nextInt();
+            for (int i =0; i < bookArray.length; i++) {
+                if (bookArray[i]). getid() == id) {
+                    if (bookArray[i].getIsCheckedOut());
+            }
 
 
 
+                }
+
+        }
+
+        }
         } while (commandInput !=3);
     }
 }
-
-
-
-
-            //Display Available books
-
 
 
 
@@ -48,9 +70,14 @@ class Book{
             this.isbn = isbn;
             this.title = title;
             this.isCheckedOut = false;
-            this.checkedOutTo = checkedOutTo;
+            this.checkedOutTo = null;
 
         }
+//        public void checkOut (String name){
+//            this.isCheckedOut = true;
+//            this.checkedOutTo = name;
+//        }
+
         //id- Properties /Get n Set
         public int id;
         public int getId() {
