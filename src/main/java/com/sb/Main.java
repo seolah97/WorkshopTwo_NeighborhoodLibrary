@@ -4,13 +4,13 @@ public class Main {
     public static void main(String[] args){
         Scanner userScanner = new Scanner(System.in);
 
-        Book[] bookArray = new Book[6];
+        Book[] bookArray = new Book[5];
 
-        bookArray[1] = new Book(5864, "7851-3545", "Count of Monte Cristo", false, null);
-        bookArray[2] = new Book(6284, "8495-5435", "Atomic Habits", false, null);
-        bookArray[3] = new Book(8219, "4982-6489", "The Little Prince", false, null);
-        bookArray[4] = new Book(3685, "8492-6429", "Harry Potter", false, null);
-        bookArray[5] = new Book(2984, "6782-3462", "The Witches", false, null);
+        bookArray[0] = new Book(5864, "7851-3545", "Count of Monte Cristo", false, null);
+        bookArray[1] = new Book(6284, "8495-5435", "Atomic Habits", false, null);
+        bookArray[2] = new Book(8219, "4982-6489", "The Little Prince", false, null);
+        bookArray[3] = new Book(3685, "8492-6429", "Harry Potter", false, null);
+        bookArray[4] = new Book(2984, "6782-3462", "The Witches", false, null);
 
 //        int totalNumOfBooks = bookArray.length;
 
@@ -43,12 +43,12 @@ public class Main {
                             bookArray[i].getTitle()
                     );
                 }
-            System.out.println("Please enter the ID of the book to check out: ");
-            int Id = userScanner.nextInt();
-            for (int i =0; i < bookArray.length; i++) {
-                if (bookArray[i]). getid() == id) {
-                    if (bookArray[i].getIsCheckedOut());
-            }
+//            System.out.println("Please enter the ID of the book to check out: ");
+//            int Id = userScanner.nextInt();
+//            for (int i =0; i < bookArray.length; i++) {
+//                if (bookArray[i]. getid() == id) {
+//                    if (bookArray[i].getIsCheckedOut());
+//            }
 
 
 
@@ -56,10 +56,10 @@ public class Main {
 
         }
 
-        }
         } while (commandInput !=3);
+        }
     }
-}
+
 
 
 
@@ -71,12 +71,7 @@ class Book{
             this.title = title;
             this.isCheckedOut = false;
             this.checkedOutTo = null;
-
         }
-//        public void checkOut (String name){
-//            this.isCheckedOut = true;
-//            this.checkedOutTo = name;
-//        }
 
         //id- Properties /Get n Set
         public int id;
@@ -114,8 +109,17 @@ class Book{
         public void setCheckedOutTo(String checkedOutTo) {
             this.checkedOutTo = checkedOutTo;}
 
+    public void checkOut(String name){
+        isCheckedOut = true;
+        checkedOutTo = name;
+        System.out.println(title + "  is checked out to " + checkedOutTo);
+    }
+};
+//    public void checkIn(String name){
+//        isCheckedOut=false;
+//        checkedOutTo="";
+//        System.out.println(title+" is available and ready to be checked out.");
+//    }
 
 
-
-
-}
+//}
